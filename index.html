@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Forms Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- JS Required -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-light">
+
+<div class="container mt-4">
+
+  <h2 class="text-center mb-4">📝 Bootstrap Forms Project</h2>
+
+  <!-- 1. Stacked Form -->
+  <h4>1. Stacked Form</h4>
+  <form class="mb-4">
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" placeholder="Enter password">
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input">
+      <label class="form-check-label">Remember me</label>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+  </form>
+
+  <!-- 2. Inline Form -->
+  <h4>2. Inline Form</h4>
+  <form class="form-inline mb-4">
+    <input type="email" class="form-control mb-2 mr-sm-2" placeholder="Email">
+    <input type="password" class="form-control mb-2 mr-sm-2" placeholder="Password">
+
+    <div class="form-check mb-2 mr-sm-2">
+      <input type="checkbox" class="form-check-input">
+      <label class="form-check-label">Remember</label>
+    </div>
+
+    <button class="btn btn-success mb-2">Login</button>
+  </form>
+
+  <!-- 3. Grid Form -->
+  <h4>3. Grid Form</h4>
+  <form class="mb-4">
+    <div class="form-row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="First Name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Last Name">
+      </div>
+    </div>
+  </form>
+
+  <!-- 4. Input Types -->
+  <h4>4. Input Types</h4>
+  <form class="mb-4">
+    <div class="form-group">
+      <label>Text</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Select</label>
+      <select class="form-control">
+        <option>Option 1</option>
+        <option>Option 2</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Textarea</label>
+      <textarea class="form-control" rows="3"></textarea>
+    </div>
+  </form>
+
+  <!-- 5. Validation -->
+  <h4>5. Form Validation</h4>
+  <form class="needs-validation" novalidate>
+
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" class="form-control" required>
+      <div class="valid-feedback">Valid</div>
+      <div class="invalid-feedback">Please enter username</div>
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" required>
+      <div class="valid-feedback">Valid</div>
+      <div class="invalid-feedback">Please enter password</div>
+    </div>
+
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" required>
+      <label class="form-check-label">Accept terms</label>
+      <div class="invalid-feedback">Required</div>
+    </div>
+
+    <button class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+
+<!-- Validation Script -->
+<script>
+(function () {
+  'use strict';
+  window.addEventListener('load', function () {
+    var forms = document.getElementsByClassName('needs-validation');
+    Array.prototype.filter.call(forms, function (form) {
+      form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+</body>
+</html>
